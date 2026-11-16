@@ -1,0 +1,26 @@
+1.新建文件夹 "PricePrediction"
+2.环境创建与激活：
+conda --version
+conda info --envs
+conda create -p C:\Users\ASUS\anaconda3\envs\ds-price python=3.11 pip -y
+conda activate C:\Users\ASUS\anaconda3\envs\ds-price
+3.确定使用py版本
+python --version
+python -c "import sys; print(sys.executable)"
+4.让VSCode使用这个环境
+ctrl+shift+P 输入并选择：Python: Select Interpreter
+输入解释器路径：C:\Users\ASUS\anaconda3\envs\ds-price\python.exe
+5.安装基础依赖：python -m pip install numpy pandas scipy scikit-learn matplotlib seaborn joblib ipykernel
+6.检查安装结果：python -m pip check
+python -c "import numpy, pandas, scipy, sklearn, matplotlib, seaborn, joblib, ipykernel; print('All imports OK')"
+7.数据探索 eda.py
+| 文件 | 看什么 |
+|---|---|
+| `field_profile.csv` | 字段类型、缺失比例、不同取值数量及空字符串 |
+| `price_summary.csv` | 价格均值、中位数及各分位数 |
+| `category_summary.csv` | 各类别的商品数量、价格中位数和均值 |
+| `01_price_raw.png` | 原始价格分布，观察高价商品对分布的影响 |
+| `02_price_log1p.png` | 对数变换后的价格分布，更容易看清主体 |
+| `03_missing_values.png` | 训练集与测试集的缺失比例对比 |
+
+8.train_baseline.py
